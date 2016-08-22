@@ -1,0 +1,20 @@
+<app-drawer-layout force-narrow fullbleed>
+    <!--<app-drawer #navigation swipe-open [opened]="toolbar.opened" (app-drawer-transitioned)="toolbar.opened = navigation.opened">-->
+    <app-drawer>
+        <!--<ft-navigation></ft-navigation>-->
+    </app-drawer>
+    <!-- FIXME: move content out of app-header-layout, see here: https://github.com/PolymerElements/app-layout/issues/155 -->
+    <app-header-layout>
+        <app-header shadow>
+            <!--<ft-toolbar #toolbar></ft-toolbar>-->
+        </app-header>
+    </app-header-layout>
+
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    <store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m" [expandEntries]="false"></store-log-monitor>
+</app-drawer-layout>
+
+
+
