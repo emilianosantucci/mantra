@@ -5,12 +5,11 @@ import { instrumentStore } from '@ngrx/store-devtools';
 import { StoreModule, combineReducers } from '@ngrx/store';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-// import LayoutModule from '../layout/layout.module';
-// import ActivityModule from '../activity/activity.module';
-// import { initialState } from './app.state';
+import LayoutModule from './layout/layout.module';
+import { initialState } from './app.state';
 import { RouterModule } from '@angular/router';
-// import { APP_ROUTES } from './app.routes';
-// import { AsyncNgModuleLoader } from '../shared/utils/async-ngmodule-loader';
+import { APP_ROUTES } from './app.routes';
+import { AsyncNgModuleLoader } from '../../shared/utils/async-ngmodule-loader';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -18,8 +17,8 @@ import { RouterModule } from '@angular/router';
         BrowserModule,
         HttpModule,
         // RouterModule.forRoot(APP_ROUTES),
-        // StoreModule.provideStore(combineReducers(Object.assign({}, LayoutModule.reducers(), ActivityModule.reducers())), initialState),
-        // LayoutModule
+        StoreModule.provideStore(combineReducers(Object.assign({}, LayoutModule.reducers())), initialState),
+        LayoutModule
     ],
     declarations: [
         AppComponent,
