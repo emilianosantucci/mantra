@@ -10,7 +10,7 @@
  - [TSLint](https://palantir.github.io/tslint/) support
  - [EditorConfig](http://editorconfig.org/) support
  
- *More coming soon, stay tuned...*
+ *More info coming soon, stay tuned...*
  
  
  
