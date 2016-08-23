@@ -9,8 +9,8 @@
  - [Bower](https://bower.io/) integration
  - [TSLint](https://palantir.github.io/tslint/) support
  - [EditorConfig](http://editorconfig.org/) support
- 
- *More info coming soon, stay tuned...*
+
+*More info coming soon, stay tuned...*
  
  
  
