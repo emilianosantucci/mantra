@@ -3,15 +3,13 @@ import { NavigationSidebarActions } from './navigation-sidebar.actions';
 import { MeteorComponent } from 'angular2-meteor';
 import { Actions, Effect } from '@ngrx/effects';
 import { MenuItems } from '../../../../../shared/collections/menu-items.collection';
-import { AppState } from '../../../app/app.state';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MenuItem } from '../../../../../shared/models/menu-item.model';
 
 @Injectable()
 export class NavigationSidebarEffects extends MeteorComponent {
 
-    constructor(private _updates$: Actions, private _actions: NavigationSidebarActions, private _store: Store<AppState>) {
+    constructor(private _updates$: Actions, private _actions: NavigationSidebarActions) {
         super();
     }
 
