@@ -1,5 +1,9 @@
 {
-  "name": "MeteorCollision",
+  "name": "Meteora",
+  "author": "Emiliano Santucci <emiliano.santucci@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/emilianosantucci/meteora",
+  "description": "Meteora: Meteor all-in-one",
   "private": true,
   "scripts": {
     "start": "meteor run"
