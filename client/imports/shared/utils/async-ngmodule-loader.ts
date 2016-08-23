@@ -1,4 +1,4 @@
-import { Injectable, NgModuleFactory, NgModuleFactoryLoader, Compiler, Type } from '@angular/core';
+import { Injectable, NgModuleFactory, NgModuleFactoryLoader, Compiler, Type, DynamicComponentLoader } from '@angular/core';
 import { ConcreteType } from '@angular/compiler/src/facade/lang';
 
 class LoaderCallback {
@@ -11,6 +11,8 @@ export let load: Type = (callback: Function) => {
 };
 
 /**
+ * Inspired on https://gist.github.com/brandonroberts/02cc07face25886fe142c4dbd8da1340#file-async-ng-module-loader-ts
+ *
  * NgModuleFactoryLoader that uses Promise to load NgModule type and then compiles them.
  * @experimental
  */
@@ -24,13 +26,13 @@ export class AsyncNgModuleLoader implements NgModuleFactoryLoader {
 
             return Promise
                 .resolve(loader)
-                .then((type: any) => checkNotEmpty(type, '', ''))
-                .then((type: any) => this.compiler.compileModuleAsync(type));
+                .then((type: any) => checkNotEmpty(type))
+                .then((type: any) => this.compiler.compileModuleAsync(type.default));
         } else {
+            // FIXME: file not resolved at runtime
+
             let name = (modulePath as string).split('#');
-
-            let module: ConcreteType<any> = require('../'.concat(name[0])).default;
-
+            let module: ConcreteType<any> = require(name[0]).default;
             let promise = Promise.resolve(module);
 
             return promise.then((type) => this.compiler.compileModuleAsync(type));
@@ -38,9 +40,9 @@ export class AsyncNgModuleLoader implements NgModuleFactoryLoader {
     }
 }
 
-function checkNotEmpty(value: any, modulePath: string, exportName: string): any {
+function checkNotEmpty(value: any): any {
     if (!value) {
-        throw new Error(`Cannot find '${exportName}' in '${modulePath}'`);
+        throw new Error(`Cannot find module. Error: ${value}`);
     }
     return value;
 }

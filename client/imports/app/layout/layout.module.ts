@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutService } from './layout.service';
 import NavigationSidebarModule from './navigation-sidebar/navigation-sidebar.module';
@@ -14,15 +14,20 @@ import { EffectsModule } from '@ngrx/effects';
         LayoutModule.effects().map(effects => EffectsModule.run(effects))
     ],
     declarations: [],
-    providers: [
-        LayoutService
-    ],
+    providers: [],
     exports: [
         NavigationSidebarModule,
         ToolbarModule
     ]
 })
 export default class LayoutModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: LayoutModule,
+            providers: [ LayoutService ]
+        };
+    }
+
     static reducers(): {[key: string]: ActionReducer<any>} {
         return Object.assign({}, ToolbarModule.reducers(), NavigationSidebarModule.reducers());
     }

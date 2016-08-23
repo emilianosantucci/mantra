@@ -1,6 +1,10 @@
 import { Routes } from '@angular/router';
+import { load } from '../shared/utils/async-ngmodule-loader';
 
 export const APP_ROUTES: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', loadChildren: '../home/home.module.ts#HomeModule' }
+    {
+        path: 'home',
+        loadChildren: load(() => require('../home/home.module'))
+    }
 ];

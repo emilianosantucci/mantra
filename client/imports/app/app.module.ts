@@ -9,23 +9,23 @@ import LayoutModule from './layout/layout.module';
 import { initialState } from './app.state';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
-import { AsyncNgModuleLoader } from '../../shared/utils/async-ngmodule-loader';
+import { AsyncNgModuleLoader } from '../shared/utils/async-ngmodule-loader';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     imports: [
         BrowserModule,
         HttpModule,
-        // RouterModule.forRoot(APP_ROUTES),
+        RouterModule.forRoot(APP_ROUTES),
         StoreModule.provideStore(combineReducers(Object.assign({}, LayoutModule.reducers())), initialState),
-        LayoutModule
+        LayoutModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        StoreLogMonitorComponent
+        StoreLogMonitorComponent // FIXME: until @ngrx/store-log-monitor implements NgModule
     ],
     providers: [
-        // { provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader },
+        { provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader },
         instrumentStore({
             monitor: useLogMonitor({
                 visible: true,
