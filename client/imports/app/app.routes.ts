@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { load } from '../shared/utils/async-ngmodule-loader';
+import { load } from '/client/imports/shared/utils/async-ngmodule-loader';
 
 export const APP_ROUTES: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { NavigationSidebarActions } from './navigation-sidebar.actions';
 import { MeteorComponent } from 'angular2-meteor';
 import { Actions, Effect } from '@ngrx/effects';
-import { MenuItems } from '../../../../../shared/collections/menu-items.collection';
 import { Observable } from 'rxjs';
-import { MenuItem } from '../../../../../shared/models/menu-item.model';
+import { NavigationSidebarActions } from './navigation-sidebar.actions';
+import { MenuItem } from '/shared/models/menu-item.model';
+import { MenuItems } from '/shared/collections/menu-items.collection';
 
 @Injectable()
 export class NavigationSidebarEffects extends MeteorComponent {

@@ -1,5 +1,5 @@
-import { MenuItems } from '../../shared/collections/menu-items.collection';
-import { MenuItem } from '../../shared/models/menu-item.model';
+import { MenuItems } from '/shared/collections/menu-items.collection';
+import { MenuItem } from '/shared/models/menu-item.model';
 
 declare var faker: Faker.FakerStatic;
 
@@ -8,8 +8,8 @@ export function mockMenus() {
         faker.locale = 'it';
 
         for (let i = 0; i < 10; i++) {
-            // noinspection TypeScriptValidateTypes
             // FIXME: use Astronomy Model
+            // noinspection TypeScriptValidateTypes
             MenuItems.insert(<MenuItem>{
                 name: faker.lorem.sentence(1),
                 icon: faker.random.arrayElement<string>([ 'explore', 'extension', 'event', 'build', 'android', 'account_balance', 'face', 'info' ]),

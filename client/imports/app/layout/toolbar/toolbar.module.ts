@@ -1,9 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActionReducer } from '@ngrx/store';
 import { ToolbarComponent } from './toolbar.component';
 import { ToolbarActions } from './toolbar.actions';
 import { ToolbarReducer } from './toolbar.reducer';
-import { ActionReducer } from '@ngrx/store';
 import { ToolbarEffects } from './toolbar.effects';
 
 @NgModule({

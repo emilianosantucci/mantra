@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { MenuItem } from '../../../../../../shared/models/menu-item.model';
 import { PolymerElement } from '@vaadin/angular2-polymer';
+import { MenuItem } from '/shared/models/menu-item.model';
 
 @Component({
     selector: 'mc-menu-item',
@@ -21,8 +21,7 @@ export class MenuItemComponent implements OnChanges {
     @Input() item: MenuItem;
     @Output() click = new EventEmitter();
 
-    constructor() {
-    }
+    constructor() { }
 
     ngOnChanges(changes: any): any {
         if (changes.item) {

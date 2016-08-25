@@ -9,7 +9,7 @@ import LayoutModule from './layout/layout.module';
 import { initialState } from './app.state';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
-import { AsyncNgModuleLoader } from '../shared/utils/async-ngmodule-loader';
+import { AsyncNgModuleLoader } from '/client/imports/shared/utils/async-ngmodule-loader';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

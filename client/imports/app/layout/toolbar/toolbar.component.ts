@@ -1,8 +1,8 @@
 import { Component, Output } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { PolymerElement } from '@vaadin/angular2-polymer';
 import { SidebarStatus } from './toolbar.state';
 import { LayoutService } from '../layout.service';
-import { PolymerElement } from '@vaadin/angular2-polymer';
 
 @Component({
     selector: 'mc-toolbar',

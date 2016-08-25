@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PolymerElement } from '@vaadin/angular2-polymer';
-import { LayoutService } from '../app/layout/layout.service';
+import { LayoutService } from '/client/imports/app/layout/layout.service';
 
 @Component({
     selector: 'mc-home',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ToolbarActions } from './toolbar.actions';
 import { Actions } from '@ngrx/effects';
+import { ToolbarActions } from './toolbar.actions';
 
 @Injectable()
 export class ToolbarEffects {

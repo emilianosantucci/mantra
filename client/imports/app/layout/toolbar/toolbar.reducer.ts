@@ -1,7 +1,7 @@
-import { ToolbarState, SidebarStatus } from './toolbar.state';
 import { ActionReducer, Action } from '@ngrx/store';
-import { ToolbarActions } from './toolbar.actions';
 import { fromJS } from 'immutable';
+import { ToolbarState, SidebarStatus } from './toolbar.state';
+import { ToolbarActions } from './toolbar.actions';
 
 const initialState: ToolbarState = <ToolbarState>{
     title: '',

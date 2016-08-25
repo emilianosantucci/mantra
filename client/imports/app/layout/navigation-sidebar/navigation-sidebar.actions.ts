@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { MenuItem } from '../../../../../shared/models/menu-item.model';
+import { MenuItem } from '/shared/models/menu-item.model';
 
 @Injectable()
 export class NavigationSidebarActions {

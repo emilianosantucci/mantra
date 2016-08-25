@@ -1,11 +1,11 @@
-import { ToolbarState } from './toolbar/toolbar.state';
-import { Observable } from 'rxjs/Rx';
-import { NavigationSidebarState } from './navigation-sidebar/navigation-sidebar.state';
+import { OnInit, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.state';
+import { Observable } from 'rxjs/Rx';
+import { ToolbarState } from './toolbar/toolbar.state';
+import { NavigationSidebarState } from './navigation-sidebar/navigation-sidebar.state';
 import { NavigationSidebarActions } from './navigation-sidebar/navigation-sidebar.actions';
 import { ToolbarActions } from './toolbar/toolbar.actions';
-import { OnInit, Injectable } from '@angular/core';
+import { AppState } from '/client/imports/app/app.state';
 
 @Injectable()
 export class LayoutService implements OnInit {
