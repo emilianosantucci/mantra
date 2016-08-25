@@ -13,7 +13,8 @@
     "paths": {
       "/client/*": ["client/*"],
       "/server/*": ["server/*"],
-      "/shared/*": ["shared/*"]
+      "/shared/*": ["shared/*"],
+      "*": ["node_modules/*"]
     }
   },
   "compileOnSave": false,
