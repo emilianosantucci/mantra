@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
+import ActionsUtils from '/client/imports/shared/utils/actions.utils';
 
 @Injectable()
 export class ToolbarActions {
-    static SET_TITLE: string = '[Toolbar] Set page title';
+    static LABEL = 'Toolbar';
+
+    static SET_TITLE: string = ActionsUtils.createMessage(ToolbarActions.LABEL, 'Set page title');
 
     setTitle(title: string): Action {
         return {
@@ -12,7 +15,7 @@ export class ToolbarActions {
         };
     }
 
-    static TOGGLE: string = '[Toolbar] Toggle Menu';
+    static TOGGLE: string = ActionsUtils.createMessage(ToolbarActions.LABEL, 'Toggle Menu');
 
     toggle(): Action {
         return {
@@ -20,7 +23,7 @@ export class ToolbarActions {
         };
     }
 
-    static OPEN: string = '[Toolbar] Open';
+    static OPEN: string = ActionsUtils.createMessage(ToolbarActions.LABEL, 'Open');
 
     open(): Action {
         return {
@@ -28,7 +31,7 @@ export class ToolbarActions {
         };
     }
 
-    static CLOSE: string = '[Toolbar] Close';
+    static CLOSE: string = ActionsUtils.createMessage(ToolbarActions.LABEL, 'Close');
 
     close(): Action {
         return {

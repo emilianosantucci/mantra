@@ -1,10 +1,17 @@
 import { Routes } from '@angular/router';
-import { load } from '/client/imports/shared/utils/async-ngmodule-loader';
+import HomeModule from '/client/imports/+home/home.module';
 
-export const APP_ROUTES: Routes = [
+
+export const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     {
         path: 'home',
-        loadChildren: load(() => require('../home/home.module'))
+        loadChildren: (() => new Promise((resolve, reject) => {
+            return resolve(require('/client/imports/+home/home.module').default)
+        })),
+        data: {
+            reducers: HomeModule.reducers(),
+            effects: HomeModule.effects()
+        }
     }
 ];

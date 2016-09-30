@@ -1,13 +1,13 @@
 {
-  "name": "app",
+  "name": "mantra",
   "authors": [
     "Emiliano Santucci <emiliano.santucci@gmail.com>"
   ],
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
-  "private": true,
+  "homepage": "https://github.com/emilianosantucci/mantra",
+  "private": false,
   "ignore": [
     "**/.*",
     "public/components"
