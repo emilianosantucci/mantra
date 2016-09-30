@@ -1,18 +1,18 @@
 {
-  "name": "meteora",
+  "name": "farmy",
   "dependencies": {
-    "es6-promise": "registry:npm/es6-promise#3.0.0+20160211003958"
+    "es6-promise": "registry:npm/es6-promise#3.0.0+20160723033700"
   },
   "globalDependencies": {
     "angular2-compilers": "github:meteor-typings/angular2-compilers#c2ca3d3036b08f04a22b98ed16ff17377499e1e7",
-    "astronomy": "github:emilianosantucci/astronomy-ts/astronomy.d.ts",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
     "faker": "registry:dt/faker#0.0.0+20160406111603",
     "immutable": "registry:dt/immutable#3.8.1+20160608070634",
-    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
-    "meteor": "registry:env/meteor#1.3.0+20160713172414",
-    "node": "registry:env/node#6.0.0+20160622202520",
-    "underscore": "registry:dt/underscore#1.7.0+20160720002543",
+    "jquery": "registry:dt/jquery#1.10.0+20160908203239",
+    "jsonschema": "registry:dt/jsonschema#0.0.0+20160811135847",
+    "meteor": "registry:env/meteor#1.3.0+20160830163906",
+    "node": "registry:env/node#6.0.0+20160918225031",
+    "underscore": "registry:dt/underscore#1.8.3+20160908111004",
     "underscore.string": "registry:dt/underscore.string#0.0.0+20160514164108"
   }
 }

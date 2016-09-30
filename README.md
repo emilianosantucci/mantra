@@ -1,4 +1,4 @@
-# Meteora: Meteor All-in-One
+# Meteora: platform to make the web coming, now.
 
 [Meteor](http://www.meteor.com) offer a great platform to make a complete solution for web, mobile and desktop platforms but, some times, its not enough.
 

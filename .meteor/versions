@@ -4,7 +4,6 @@ autopublish@1.0.7
 autoupdate@1.2.11
 babel-compiler@6.9.1
 babel-runtime@0.1.11
-barbatus:angular2-polyfills@0.5.0
 barbatus:css-compiler@0.3.0
 barbatus:scss-compiler@3.8.1_1
 barbatus:typescript@0.4.1
@@ -36,12 +35,10 @@ htmljs@1.0.10
 http@1.1.8
 id-map@1.0.8
 insecure@1.0.7
-jagi:astronomy@2.1.2
 jquery@1.11.9
 launch-screen@1.0.12
 livedata@1.0.18
 logging@1.1.15
-mdg:validation-error@0.5.1
 meteor@1.2.17
 meteor-base@1.0.4
 minifier-css@1.2.14

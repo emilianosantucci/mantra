@@ -1,12 +1,12 @@
 <app-drawer-layout force-narrow fullbleed>
     <app-drawer #navigation swipe-open [opened]="toolbar.opened" (app-drawer-transitioned)="toolbar.opened = navigation.opened">
-        <mc-navigation></mc-navigation>
+        <se-navigation></se-navigation>
     </app-drawer>
 
     <!-- FIXME: move content out of app-header-layout, see here: https://github.com/PolymerElements/app-layout/issues/155 -->
     <app-header-layout>
         <app-header shadow>
-            <mc-toolbar #toolbar></mc-toolbar>
+            <se-toolbar #toolbar></se-toolbar>
         </app-header>
     </app-header-layout>
 

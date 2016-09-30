@@ -3,13 +3,9 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
 import { MenuItem } from '/shared/models/menu-item.model';
 
 @Component({
-    selector: 'mc-menu-item',
+    selector: 'se-menu-item',
     // FIXME: import template when TypeScript 2.0 is released
-    template: require('./menu-item.component.html').default,
-    directives: [
-        PolymerElement('paper-icon-item'),
-        PolymerElement('iron-icon')
-    ]
+    template: require('./menu-item.component.html').default
 })
 export class MenuItemComponent implements OnChanges {
 

@@ -4,6 +4,6 @@ import { ToolbarActions } from './toolbar.actions';
 
 @Injectable()
 export class ToolbarEffects {
-    constructor(private _updates$: Actions, private _actions: ToolbarActions) {
+    constructor(private updates: Actions, private actions: ToolbarActions) {
     }
 }

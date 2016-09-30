@@ -1,7 +1,11 @@
-import { ToolbarState, SidebarStatus } from './layout/toolbar/toolbar.state';
-import { NavigationSidebarState } from './layout/navigation-sidebar/navigation-sidebar.state';
+import { ToolbarState, SidebarStatus } from './toolbar/toolbar.state';
+import { NavigationSidebarState } from './navigation-sidebar/navigation-sidebar.state';
+import { HomeState } from '/client/imports/+home/home.state';
+import { RouterState } from '@ngrx/router-store';
 
 export interface AppState {
+    router: RouterState;
+    home: HomeState;
     toolbar: ToolbarState;
     navigation: NavigationSidebarState;
 }
