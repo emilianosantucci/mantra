@@ -3,7 +3,7 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
 import { MenuItem } from '/shared/models/menu-item.model';
 
 @Component({
-    selector: 'se-menu-item',
+    selector: 'mantra-menu-item',
     // FIXME: import template when TypeScript 2.0 is released
     template: require('./menu-item.component.html').default
 })

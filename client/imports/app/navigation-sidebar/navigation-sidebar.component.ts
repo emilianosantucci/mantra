@@ -4,7 +4,7 @@ import { NavigationSidebarState } from './navigation-sidebar.state';
 import { NavigationSidebarService } from './navigation-sidebar.service';
 
 @Component({
-    selector: 'se-navigation',
+    selector: 'mantra-navigation',
     // FIXME: import template when TypeScript 2.0 is released
     template: require('./navigation-sidebar.component.html').default
 })

@@ -5,7 +5,7 @@ import { HomeState } from '/client/imports/+home/home.state';
 
 @Component({
     moduleId: module.id,
-    selector: 'se-home',
+    selector: 'mantra-home',
     // FIXME: import template when TypeScript 2.0 is released
     template: require('./home.component.html').default
 })

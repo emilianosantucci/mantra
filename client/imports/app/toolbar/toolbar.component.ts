@@ -3,7 +3,7 @@ import { SidebarStatus } from './toolbar.state';
 import { ToolbarService } from './toolbar.service';
 
 @Component({
-    selector: 'se-toolbar',
+    selector: 'mantra-toolbar',
     // FIXME: import template when TypeScript 2.0 is released
     template: require('./toolbar.component.html').default
 })
