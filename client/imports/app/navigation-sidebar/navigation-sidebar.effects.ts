@@ -12,7 +12,6 @@ export class NavigationSidebarEffects {
     @Effect()
     loadResult$ = this.updates$
         .ofType(NavigationSidebarActions.LOAD_MENU)
-        .do(() => console.log('Load menu...'))
         .switchMap((action) => MenuItems.find())
         .debounce(() => Observable.interval(10))
         .map(items => this.actions.loadMenuSuccess(items));

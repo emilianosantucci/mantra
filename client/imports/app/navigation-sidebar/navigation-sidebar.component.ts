@@ -16,7 +16,6 @@ export class NavigationSidebarComponent implements OnInit {
     }
 
     ngOnInit(): any {
-        console.log('Navigation OnInit');
         this.service.loadNavigation();
     }
 }
