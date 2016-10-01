@@ -1,6 +1,6 @@
+import 'reflect-metadata';
+import 'zone.js';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './imports/app/app.module';
+import { AppModule } from '/client/imports/app/app.module';
 
-document.addEventListener('WebComponentsReady', function () {
-    platformBrowserDynamic().bootstrapModule(AppModule);
-});
+platformBrowserDynamic().bootstrapModule(AppModule);

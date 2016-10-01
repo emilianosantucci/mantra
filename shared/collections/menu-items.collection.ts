@@ -1,3 +1,4 @@
 import { MenuItem } from '/shared/models/menu-item.model';
+import { MongoObservable } from 'meteor-rxjs';
 
-export let MenuItems = new Mongo.Collection<MenuItem>('menu_items');
+export const MenuItems = new MongoObservable.Collection<MenuItem>('menu_items');

@@ -1,39 +1,50 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NgModuleFactoryLoader } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { StoreLogMonitorComponent, useLogMonitor } from '@ngrx/store-log-monitor';
-import { instrumentStore } from '@ngrx/store-devtools';
-import { StoreModule, combineReducers } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule, combineReducers, ActionReducer } from '@ngrx/store';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import LayoutModule from './layout/layout.module';
 import { initialState } from './app.state';
 import { RouterModule } from '@angular/router';
-import { APP_ROUTES } from './app.routes';
-import { AsyncNgModuleLoader } from '/client/imports/shared/utils/async-ngmodule-loader';
+import { appRoutes } from './app.routes';
+import SharedModule from '/client/imports/shared/shared.module';
+import { routerReducer } from '@ngrx/router-store';
+import { appReducer } from '/client/imports/app/app.reducer';
+import { PolymerElement } from '@vaadin/angular2-polymer';
+import ToolbarModule from '/client/imports/app/toolbar/toolbar.module';
+import NavigationSidebarModule from '/client/imports/app/navigation-sidebar/navigation-sidebar.module';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     imports: [
         BrowserModule,
+        SharedModule.forRoot(),
         HttpModule,
-        RouterModule.forRoot(APP_ROUTES),
-        StoreModule.provideStore(combineReducers(Object.assign({}, LayoutModule.reducers())), initialState),
-        LayoutModule.forRoot()
+        RouterModule.forRoot(appRoutes),
+        StoreModule.provideStore(AppModule.reducers(), initialState),
+        StoreDevtoolsModule.instrumentOnlyWithExtension(),
+        ToolbarModule.forRoot(),
+        NavigationSidebarModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        StoreLogMonitorComponent // FIXME: until @ngrx/store-log-monitor implements NgModule
+        PolymerElement('app-drawer-layout'),
+        PolymerElement('app-drawer'),
+        PolymerElement('app-header-layout'),
+        PolymerElement('app-toolbar'),
+        PolymerElement('app-header')
     ],
-    providers: [
-        { provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader },
-        instrumentStore({
-            monitor: useLogMonitor({
-                visible: true,
-                position: 'right'
-            })
-        })
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {
+    static reducers(): ActionReducer<any> {
+        return combineReducers(Object.assign({},
+            appReducer,
+            { router: routerReducer },
+            NavigationSidebarModule.reducers(),
+            ToolbarModule.reducers(),
+            appRoutes.filter(route => (route.data && route.data['reducers'])).map(route => route.data['reducers']).pop()
+        ));
+    }
 }

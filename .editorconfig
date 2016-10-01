@@ -10,7 +10,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{client,server, shared}/**.{ts,json,js}]
+[{client,server,shared}/**.{ts,json,js}]
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
