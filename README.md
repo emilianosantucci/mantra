@@ -74,12 +74,15 @@ Now if you're not scared of this, we can pass to explain how Mantra can help us 
 [TBD]
 
 ### Getting Started
+
 [TBD]
 
 ### Configuration
+
 [TBD]
 
 ### Contributing
+
 [TBD]
 
 ### License
