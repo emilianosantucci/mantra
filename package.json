@@ -4,7 +4,7 @@
   "license": "MIT",
   "homepage": "https://github.com/emilianosantucci/mantra",
   "description": "Mantra: making the next generation apps, today.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "start": "meteor run"
