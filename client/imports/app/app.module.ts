@@ -5,14 +5,14 @@ import { StoreModule, combineReducers, ActionReducer } from '@ngrx/store';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { initialState } from './app.state';
-import { RouterModule } from '@angular/router';
-import { appRoutes } from './app.routes';
-import SharedModule from '/client/imports/shared/shared.module';
+import { RouterModule, Route } from '@angular/router';
 import { routerReducer } from '@ngrx/router-store';
 import { appReducer } from '/client/imports/app/app.reducer';
 import { PolymerElement } from '@vaadin/angular2-polymer';
 import ToolbarModule from '/client/imports/app/toolbar/toolbar.module';
 import NavigationSidebarModule from '/client/imports/app/navigation-sidebar/navigation-sidebar.module';
+import { appRoutes } from './app.routes';
+import SharedModule from '../shared/shared.module';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -44,7 +44,7 @@ export class AppModule {
             { router: routerReducer },
             NavigationSidebarModule.reducers(),
             ToolbarModule.reducers(),
-            appRoutes.filter(route => (route.data && route.data['reducers'])).map(route => route.data['reducers']).pop()
+            (appRoutes as Array<Route>).filter(route => (route.data && route.data['reducers'])).map(route => route.data['reducers']).pop()
         ));
     }
 }

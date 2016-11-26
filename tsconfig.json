@@ -1,29 +1,25 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "module": "commonjs",
     "target": "es5",
-    "isolatedModules": false,
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "/client/*": ["client/*"],
-      "/server/*": ["server/*"],
-      "/shared/*": ["shared/*"],
-      "*": ["node_modules/*"]
-    }
+      "/shared/*": ["shared/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types/",
+      "typings/"
+    ]
   },
   "compileOnSave": false,
-  "filesGlob": [
-    "client/**/*.ts",
-    "server/**/*.ts",
-    "shared/**/*.ts",
-    "typings/**/*.d.ts"
-  ],
   "exclude": [
     "node_modules"
   ]

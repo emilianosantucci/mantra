@@ -3,6 +3,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs';
 import { NavigationSidebarActions } from './navigation-sidebar.actions';
 import { MenuItems } from '/shared/collections/menu-items.collection';
+import { MenuItem } from '/shared/models/menu-item.model';
 
 @Injectable()
 export class NavigationSidebarEffects {
@@ -14,7 +15,7 @@ export class NavigationSidebarEffects {
         .ofType(NavigationSidebarActions.LOAD_MENU)
         .switchMap((action) => MenuItems.find())
         .debounce(() => Observable.interval(10))
-        .map(items => this.actions.loadMenuSuccess(items));
+        .map((items: MenuItem[]) => this.actions.loadMenuSuccess(items));
 
 }
 
