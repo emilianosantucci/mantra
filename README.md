@@ -28,6 +28,7 @@ and **Angular 2**.
 With my previous working experience with AngularJS, Angular 2 could be obvious.
 
 Anyway, I've put aside my love for Angular's philosophy and I have spent few weeks on compare:
+
 1. Compatibility with Meteor without strong dependency (if we want migrate client-side on another place, we need to rewrite it from scratch?)
 2. Features offer
 3. MVC pattern coverage
@@ -54,6 +55,7 @@ Okay, I'm serious now. All of kinds are fantastic, we can make small or enterpri
 damn) how much cost that revolution?
   
 Any seasoned developer after an initial "wow" start to think at:
+
 - Learning curve
 - Knowledge of programming language 
 - Architecture design

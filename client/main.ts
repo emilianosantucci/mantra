@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import 'zone.js';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from '/client/imports/app/app.module';
+import { DemoAppModule } from '/client/imports/demo/app/app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+/** For demo purpose, change `DemoAppModule` with your app */
+platformBrowserDynamic().bootstrapModule(DemoAppModule);

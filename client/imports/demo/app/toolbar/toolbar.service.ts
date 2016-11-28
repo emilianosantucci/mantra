@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
-import { AppState } from '/client/imports/app/app.state';
+import { AppState } from '/client/imports/demo/app/app.state';
 import { ToolbarState } from './toolbar.state';
 import { ToolbarActions } from './toolbar.actions';
 

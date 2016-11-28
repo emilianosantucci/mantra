@@ -1,7 +1,7 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import { fromJS } from 'immutable';
-import { HomeState } from '/client/imports/+home/home.state';
-import { HomeActions } from '/client/imports/+home/home.actions';
+import { HomeState } from '/client/imports/demo/+home/home.state';
+import { HomeActions } from '/client/imports/demo/+home/home.actions';
 
 const initialState: HomeState = <HomeState> {
     message: ''

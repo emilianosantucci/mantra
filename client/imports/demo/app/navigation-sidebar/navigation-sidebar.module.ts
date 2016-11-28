@@ -5,7 +5,6 @@ import { ActionReducer } from '@ngrx/store';
 import { NavigationSidebarReducer } from './navigation-sidebar.reducer';
 import { NavigationSidebarEffects } from './navigation-sidebar.effects';
 import { MenuItemComponent } from './menu-item/menu-item.component';
-import { PolymerElement } from '@vaadin/angular2-polymer';
 import SharedModule from '/client/imports/shared/shared.module';
 import { NavigationSidebarService } from './navigation-sidebar.service';
 import { EffectsModule } from '@ngrx/effects';
@@ -18,11 +17,7 @@ import { EffectsModule } from '@ngrx/effects';
     ],
     declarations: [
         NavigationSidebarComponent,
-        MenuItemComponent,
-        PolymerElement('paper-menu'),
-        PolymerElement('paper-icon-item'),
-        PolymerElement('iron-icon')
-
+        MenuItemComponent
     ],
     providers: [NavigationSidebarActions],
     exports: [NavigationSidebarComponent]

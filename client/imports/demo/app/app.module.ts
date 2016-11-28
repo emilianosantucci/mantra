@@ -5,14 +5,13 @@ import { StoreModule, combineReducers, ActionReducer } from '@ngrx/store';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { initialState } from './app.state';
-import { RouterModule } from '@angular/router';
-import { appRoutes } from './app.routes';
-import SharedModule from '/client/imports/shared/shared.module';
+import { RouterModule, Route } from '@angular/router';
 import { routerReducer } from '@ngrx/router-store';
-import { appReducer } from '/client/imports/app/app.reducer';
-import { PolymerElement } from '@vaadin/angular2-polymer';
-import ToolbarModule from '/client/imports/app/toolbar/toolbar.module';
-import NavigationSidebarModule from '/client/imports/app/navigation-sidebar/navigation-sidebar.module';
+import { appReducer } from '/client/imports/demo/app/app.reducer';
+import ToolbarModule from '/client/imports/demo/app/toolbar/toolbar.module';
+import NavigationSidebarModule from '/client/imports/demo/app/navigation-sidebar/navigation-sidebar.module';
+import { appRoutes } from './app.routes';
+import SharedModule from '../../shared/shared.module';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -21,30 +20,25 @@ import NavigationSidebarModule from '/client/imports/app/navigation-sidebar/navi
         SharedModule.forRoot(),
         HttpModule,
         RouterModule.forRoot(appRoutes),
-        StoreModule.provideStore(AppModule.reducers(), initialState),
+        StoreModule.provideStore(DemoAppModule.reducers(), initialState),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
         ToolbarModule.forRoot(),
         NavigationSidebarModule.forRoot()
     ],
     declarations: [
-        AppComponent,
-        PolymerElement('app-drawer-layout'),
-        PolymerElement('app-drawer'),
-        PolymerElement('app-header-layout'),
-        PolymerElement('app-toolbar'),
-        PolymerElement('app-header')
+        AppComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule {
+export class DemoAppModule {
     static reducers(): ActionReducer<any> {
         return combineReducers(Object.assign({},
             appReducer,
             { router: routerReducer },
             NavigationSidebarModule.reducers(),
             ToolbarModule.reducers(),
-            appRoutes.filter(route => (route.data && route.data['reducers'])).map(route => route.data['reducers']).pop()
+            (appRoutes as Array<Route>).filter(route => (route.data && route.data['reducers'])).map(route => route.data['reducers']).pop()
         ));
     }
 }

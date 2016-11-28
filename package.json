@@ -4,7 +4,7 @@
   "license": "MIT",
   "homepage": "https://github.com/emilianosantucci/mantra",
   "description": "Mantra: making the next generation apps, today.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "start": "meteor run"
@@ -24,7 +24,6 @@
     "@ngrx/store": "^2.1.0",
     "@ngrx/store-devtools": "^3.2.2",
     "@ngrx/store-log-monitor": "^3.0.0",
-    "@vaadin/angular2-polymer": "^1.0.0-beta5",
     "angular2-meteor": "^0.7.1",
     "angular2-meteor-polyfills": "^0.1.1",
     "babel-runtime": "^6.18.0",
