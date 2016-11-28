@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
-import { AppState } from '/client/imports/app/app.state';
+import { AppState } from '/client/imports/demo/app/app.state';
 import { NavigationSidebarState } from './navigation-sidebar.state';
 import { NavigationSidebarActions } from './navigation-sidebar.actions';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '/client/imports/+home/home.service';
+import { HomeService } from '/client/imports/demo/+home/home.service';
 import { Observable } from 'rxjs';
-import { HomeState } from '/client/imports/+home/home.state';
+import { HomeState } from '/client/imports/demo/+home/home.state';
 
 @Component({
     moduleId: module.id,

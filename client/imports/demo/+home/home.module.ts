@@ -1,13 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ActionReducer } from '@ngrx/store';
 import SharedModule from '/client/imports/shared/shared.module';
-import { HomeComponent } from '/client/imports/+home/home.component';
+import { HomeComponent } from '/client/imports/demo/+home/home.component';
 import { RouterModule } from '@angular/router';
-import { homeRoutes } from '/client/imports/+home/home.routes';
-import { homeReducer } from '/client/imports/+home/home.reducer';
-import { HomeService } from '/client/imports/+home/home.service';
-import { HomeActions } from '/client/imports/+home/home.actions';
-import { PolymerElement } from '@vaadin/angular2-polymer';
+import { homeRoutes } from '/client/imports/demo/+home/home.routes';
+import { homeReducer } from '/client/imports/demo/+home/home.reducer';
+import { HomeService } from '/client/imports/demo/+home/home.service';
+import { HomeActions } from '/client/imports/demo/+home/home.actions';
 
 @NgModule({
     imports: [
@@ -15,8 +14,7 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
         RouterModule.forChild(homeRoutes)
     ],
     declarations: [
-        HomeComponent,
-        PolymerElement('paper-card')
+        HomeComponent
     ],
     providers: [HomeActions, HomeService],
     exports: [HomeComponent]

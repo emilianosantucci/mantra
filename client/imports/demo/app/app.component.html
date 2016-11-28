@@ -1,0 +1,7 @@
+<div id="app-layout">
+    <mantra-toolbar #toolbar></mantra-toolbar>
+    <mantra-navigation [hidden]="!toolbar.opened"></mantra-navigation>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
