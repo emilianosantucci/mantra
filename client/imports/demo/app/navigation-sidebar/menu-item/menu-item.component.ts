@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { PolymerElement } from '@vaadin/angular2-polymer';
 import { MenuItem } from '/shared/models/menu-item.model';
 
 @Component({

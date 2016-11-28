@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
-import { AppState } from '/client/imports/app/app.state';
-import { ToolbarState } from '/client/imports/app/toolbar/toolbar.state';
-import { NavigationSidebarState } from '/client/imports/app/navigation-sidebar/navigation-sidebar.state';
-import { NavigationSidebarService } from '/client/imports/app/navigation-sidebar/navigation-sidebar.service';
-import { ToolbarService } from '/client/imports/app/toolbar/toolbar.service';
+import { AppState } from '/client/imports/demo/app/app.state';
+import { ToolbarState } from '/client/imports/demo/app/toolbar/toolbar.state';
+import { NavigationSidebarState } from '/client/imports/demo/app/navigation-sidebar/navigation-sidebar.state';
+import { NavigationSidebarService } from '/client/imports/demo/app/navigation-sidebar/navigation-sidebar.service';
+import { ToolbarService } from '/client/imports/demo/app/toolbar/toolbar.service';
 
 
 @Injectable()

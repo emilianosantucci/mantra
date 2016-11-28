@@ -1,0 +1,4 @@
+<div id="app-toolbar">
+    <button (click)="toggle()">{{(opened ? 'close' : 'open') + ' menu'}}</button>
+    <div id="toolbar">{{(toolbar$ | async).title}}</div>
+</div>

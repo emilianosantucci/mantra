@@ -7,12 +7,11 @@ import { AppComponent } from './app.component';
 import { initialState } from './app.state';
 import { RouterModule, Route } from '@angular/router';
 import { routerReducer } from '@ngrx/router-store';
-import { appReducer } from '/client/imports/app/app.reducer';
-import { PolymerElement } from '@vaadin/angular2-polymer';
-import ToolbarModule from '/client/imports/app/toolbar/toolbar.module';
-import NavigationSidebarModule from '/client/imports/app/navigation-sidebar/navigation-sidebar.module';
+import { appReducer } from '/client/imports/demo/app/app.reducer';
+import ToolbarModule from '/client/imports/demo/app/toolbar/toolbar.module';
+import NavigationSidebarModule from '/client/imports/demo/app/navigation-sidebar/navigation-sidebar.module';
 import { appRoutes } from './app.routes';
-import SharedModule from '../shared/shared.module';
+import SharedModule from '../../shared/shared.module';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -21,23 +20,18 @@ import SharedModule from '../shared/shared.module';
         SharedModule.forRoot(),
         HttpModule,
         RouterModule.forRoot(appRoutes),
-        StoreModule.provideStore(AppModule.reducers(), initialState),
+        StoreModule.provideStore(DemoAppModule.reducers(), initialState),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
         ToolbarModule.forRoot(),
         NavigationSidebarModule.forRoot()
     ],
     declarations: [
-        AppComponent,
-        PolymerElement('app-drawer-layout'),
-        PolymerElement('app-drawer'),
-        PolymerElement('app-header-layout'),
-        PolymerElement('app-toolbar'),
-        PolymerElement('app-header')
+        AppComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule {
+export class DemoAppModule {
     static reducers(): ActionReducer<any> {
         return combineReducers(Object.assign({},
             appReducer,
