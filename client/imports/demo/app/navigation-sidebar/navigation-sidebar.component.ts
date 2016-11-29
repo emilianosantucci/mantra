@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { NavigationSidebarState } from './navigation-sidebar.state';
 import { NavigationSidebarService } from './navigation-sidebar.service';
+import * as template from './navigation-sidebar.component.html';
 
 @Component({
+    moduleId: module.id,
     selector: 'mantra-navigation',
-    // FIXME: import template when TypeScript 2.0 is released
-    template: require('./navigation-sidebar.component.html').default
+    template: template.default
 })
 export class NavigationSidebarComponent implements OnInit {
     navigation$: Observable<NavigationSidebarState>;

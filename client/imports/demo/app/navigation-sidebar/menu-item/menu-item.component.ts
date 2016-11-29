@@ -1,10 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { MenuItem } from '/shared/models/menu-item.model';
+import * as template from './menu-item.component.html';
 
 @Component({
+    moduleId: module.id,
     selector: 'mantra-menu-item',
-    // FIXME: import template when TypeScript 2.0 is released
-    template: require('./menu-item.component.html').default
+    template: template.default
 })
 export class MenuItemComponent implements OnChanges {
 
