@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from '/client/imports/demo/+home/home.service';
 import { Observable } from 'rxjs';
 import { HomeState } from '/client/imports/demo/+home/home.state';
+import * as template from './home.component.html';
 
 @Component({
     moduleId: module.id,
     selector: 'mantra-home',
-    // FIXME: import template when TypeScript 2.0 is released
-    template: require('./home.component.html').default
+    template: template.default
 })
 export class HomeComponent implements OnInit {
     home$: Observable<HomeState>;

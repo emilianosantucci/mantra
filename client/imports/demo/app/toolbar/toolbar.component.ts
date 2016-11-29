@@ -1,11 +1,12 @@
 import { Component, Output } from '@angular/core';
 import { SidebarStatus } from './toolbar.state';
 import { ToolbarService } from './toolbar.service';
+import * as template from './toolbar.component.html';
 
 @Component({
+    moduleId: module.id,
     selector: 'mantra-toolbar',
-    // FIXME: import template when TypeScript 2.0 is released
-    template: require('./toolbar.component.html').default
+    template: template.default
 })
 export class ToolbarComponent {
     toolbar$;

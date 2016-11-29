@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import * as template from './app.component.html';
 
 @Component({
+    moduleId: module.id,
     selector: 'mantra-app',
-    // FIXME: import template when TypeScript 2.0 is released
-    template: require('./app.component.html').default
+    template: template.default
 })
 export class AppComponent {
     constructor() {
