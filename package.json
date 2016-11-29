@@ -1,10 +1,10 @@
 {
-  "name": "Mantra",
+  "name": "mantra",
   "author": "Emiliano Santucci <emiliano.santucci@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/emilianosantucci/mantra",
   "description": "Mantra: making the next generation apps, today.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "start": "meteor run"
