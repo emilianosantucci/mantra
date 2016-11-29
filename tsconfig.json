@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -12,11 +15,21 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "/shared/*": ["shared/*"]
+      "/shared/*": [
+        "shared/*"
+      ]
     },
     "typeRoots": [
       "node_modules/@types/",
       "typings/"
+    ],
+    "types": [
+      "node",
+      "meteor",
+      "faker",
+      "immutable",
+      "undercore",
+      "undercore.string"
     ]
   },
   "compileOnSave": false,
